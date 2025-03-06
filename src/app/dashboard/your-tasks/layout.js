@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 export const metadata = {
 	title: "Task Management  | Your Tasks",
@@ -7,10 +7,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
-			<body suppressHydrationWarning>
-				{children}
-			</body>
-		</html>
+		<Suspense fallback="Loading...">
+			<html lang="en">
+				<body suppressHydrationWarning>
+					{children}
+				</body>
+			</html>
+		</Suspense>
 	);
 }

@@ -133,46 +133,44 @@ export default function YourTasks() {
                     </div>
 
                     <div className="flex flex-wrap gap-5 mt-5 mb-10">
-                        <Suspense fallback={<YourTasksLoader />}>
-                            {
-                                loading ?
-                                    <YourTasksLoader />
-                                    :
-                                    yourTasks.length > 0 ?
-                                        (
-                                            yourTasks.map(task => {
-                                                const { taskID, taskStatus, taskTitle, createdAt, taskPoints, taskPrice } = task
-                                                const date = createdAt.slice(0, 10)
-                                                const time = createdAt.slice(11, 16)
-                                                const datetime = date + " " + time
-                                                return (
-                                                    <div key={`${taskID}-${page}`} className="my-task-box border rounded-[5px]">
-                                                        <div className='flex flex-col h-full justify-between p-[15px]'>
-                                                            <div className='flex justify-between px-2 pb-2 border-b-2'>
-                                                                <p className='text-[13px] flex items-center gap-2'><LuInfo /> Status: <span className='text-[#888] font-bold capitalize' style={{ fontFamily: 'cocomat' }}>{taskStatus}</span></p>
-                                                                <p className='text-[15px] text-[#ef4444]' onClick={() => handleDelete(taskID)}><LuTrash className='cursor-pointer' /></p>
-                                                            </div>
-                                                            <div className='flex-1 pb-4'>
-                                                                <Link href={`/dashboard/your-tasks/${taskID}`} className='block word wrap font-bold px-2 text-[#6c5ce7] text-[20px] mt-2 transition-all duration-200 ease-out hover:text-[#0093E9]'>{taskTitle}</Link>
-                                                            </div>
-                                                            <div className='flex flex-col gap-1 px-2 bg-neutral-100 p-2 rounded-[5px]'>
-                                                                <p className='text-[13px] flex items-center gap-2'><LuClock /> Joined at: <span className='text-[#888]'>{datetime}</span></p>
-                                                                <div className='flex justify-between'>
-                                                                    <p className='text-[13px] flex items-center gap-2'><LuTrophy /> Points: <span className='text-[#888]'>{taskPoints}</span></p>
-                                                                    <p className='text-[15px]'>Price: <span className='text-[#888]'>${taskPrice}</span></p>
-                                                                </div>
+                        {
+                            loading ?
+                                <YourTasksLoader />
+                                :
+                                yourTasks.length > 0 ?
+                                    (
+                                        yourTasks.map(task => {
+                                            const { taskID, taskStatus, taskTitle, createdAt, taskPoints, taskPrice } = task
+                                            const date = createdAt.slice(0, 10)
+                                            const time = createdAt.slice(11, 16)
+                                            const datetime = date + " " + time
+                                            return (
+                                                <div key={`${taskID}-${page}`} className="my-task-box border rounded-[5px]">
+                                                    <div className='flex flex-col h-full justify-between p-[15px]'>
+                                                        <div className='flex justify-between px-2 pb-2 border-b-2'>
+                                                            <p className='text-[13px] flex items-center gap-2'><LuInfo /> Status: <span className='text-[#888] font-bold capitalize' style={{ fontFamily: 'cocomat' }}>{taskStatus}</span></p>
+                                                            <p className='text-[15px] text-[#ef4444]' onClick={() => handleDelete(taskID)}><LuTrash className='cursor-pointer' /></p>
+                                                        </div>
+                                                        <div className='flex-1 pb-4'>
+                                                            <Link href={`/dashboard/your-tasks/${taskID}`} className='block word wrap font-bold px-2 text-[#6c5ce7] text-[20px] mt-2 transition-all duration-200 ease-out hover:text-[#0093E9]'>{taskTitle}</Link>
+                                                        </div>
+                                                        <div className='flex flex-col gap-1 px-2 bg-neutral-100 p-2 rounded-[5px]'>
+                                                            <p className='text-[13px] flex items-center gap-2'><LuClock /> Joined at: <span className='text-[#888]'>{datetime}</span></p>
+                                                            <div className='flex justify-between'>
+                                                                <p className='text-[13px] flex items-center gap-2'><LuTrophy /> Points: <span className='text-[#888]'>{taskPoints}</span></p>
+                                                                <p className='text-[15px]'>Price: <span className='text-[#888]'>${taskPrice}</span></p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                )
-                                            })
-                                        )
-                                        :
-                                        <div className='flex justify-center items-center w-full'>
-                                            <p className='px-3 py-1 bg-red-200 border border-red-400 text-red-600 rounded-[5px]'>You have no task yet!</p>
-                                        </div>
-                            }
-                        </Suspense>
+                                                </div>
+                                            )
+                                        })
+                                    )
+                                    :
+                                    <div className='flex justify-center items-center w-full'>
+                                        <p className='px-3 py-1 bg-red-200 border border-red-400 text-red-600 rounded-[5px]'>You have no task yet!</p>
+                                    </div>
+                        }
                     </div>
 
                     {
