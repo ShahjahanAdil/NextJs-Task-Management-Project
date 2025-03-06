@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import '../dashboard.css'
 import './your-tasks.css'
 import DashboardHeader from '@/components/DashboardHeader/page'
@@ -63,7 +63,6 @@ export default function YourTasks() {
     const handleFilter = (item) => {
         setActiveButton(item)
         router.push(`/dashboard/your-tasks?filter=${item}`)
-        router.refresh()
     }
 
     const handleDelete = (taskID) => {
