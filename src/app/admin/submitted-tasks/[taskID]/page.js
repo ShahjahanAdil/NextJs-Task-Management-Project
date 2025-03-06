@@ -29,7 +29,7 @@ export default function SubmittedTask() {
 
 	const fetchTask = () => {
 		setLoading(true)
-		axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/submitted-tasks/${taskID}`)
+		axios.get(`${process.env.API_LINK}/api/admin/submitted-tasks/${taskID}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 200) {
@@ -53,7 +53,7 @@ export default function SubmittedTask() {
 		const updatedTask = { ...task, taskStatus: "completed" }
 
 		setAcceptLoading(true)
-		axios.patch(`${process.env.NEXT_PUBLIC_HOST}/api/admin/submitted-tasks/accept?taskID=${taskID}&userID=${updatedTask.userID}`, updatedTask)
+		axios.patch(`${process.env.API_LINK}/api/admin/submitted-tasks/accept?taskID=${taskID}&userID=${updatedTask.userID}`, updatedTask)
 			.then(res => {
 				console.log("Response received", res)
 				const { status, data } = res
@@ -75,7 +75,7 @@ export default function SubmittedTask() {
 		const updatedTask = { ...task, taskStatus: "rejected" }
 
 		setRejectLoading(true)
-		axios.patch(`${process.env.NEXT_PUBLIC_HOST}/api/admin/submitted-tasks/reject?taskID=${taskID}`)
+		axios.patch(`${process.env.API_LINK}/api/admin/submitted-tasks/reject?taskID=${taskID}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 202) {

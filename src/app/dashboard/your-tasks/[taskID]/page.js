@@ -21,7 +21,7 @@ export default function YourTasks() {
     useEffect(() => {
         if (taskID) {
             setLoading(true)
-            axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/submit-task/?taskID=${taskID}`)
+            axios.get(`${process.env.API_LINK}/api/dashboard/submit-task/?taskID=${taskID}`)
                 .then(res => {
                     const { status, data } = res
                     if (status === 200) {
@@ -59,7 +59,7 @@ export default function YourTasks() {
         }
 
         setSubmissionLoading(true)
-        await axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/submit-task`, { taskToSubmit, notification })
+        await axios.post(`${process.env.API_LINK}/api/dashboard/submit-task`, { taskToSubmit, notification })
             .then(res => {
                 const { status, data } = res
                 if (status === 201) {

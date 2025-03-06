@@ -27,7 +27,7 @@ export default function Payments() {
 
 	const fetchWithdraws = useCallback((page) => {
 		setLoading(true)
-		axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/payments?page=${page}`)
+		axios.get(`${process.env.API_LINK}/api/admin/payments?page=${page}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 200) {
@@ -47,7 +47,7 @@ export default function Payments() {
 	const handleAcceptWithdraw = (withdrawID, userID, withdrawAmount) => {
 		setAcceptLoading(true)
 		setAcceptID(withdrawID)
-		axios.patch(`${process.env.NEXT_PUBLIC_HOST}/api/admin/payments/accept?withdrawID=${withdrawID}&userID=${userID}&withdrawAmount=${withdrawAmount}`)
+		axios.patch(`${process.env.API_LINK}/api/admin/payments/accept?withdrawID=${withdrawID}&userID=${userID}&withdrawAmount=${withdrawAmount}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 202) {
@@ -71,7 +71,7 @@ export default function Payments() {
 	const handleRejectWithdraw = (withdrawID, userID, withdrawAmount) => {
 		setRejectLoading(true)
 		setRejectID(withdrawID)
-		axios.patch(`${process.env.NEXT_PUBLIC_HOST}/api/admin/payments/reject?withdrawID=${withdrawID}&userID=${userID}&withdrawAmount=${withdrawAmount}`)
+		axios.patch(`${process.env.API_LINK}/api/admin/payments/reject?withdrawID=${withdrawID}&userID=${userID}&withdrawAmount=${withdrawAmount}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 202) {

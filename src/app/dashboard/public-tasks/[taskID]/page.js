@@ -19,7 +19,7 @@ export default function PublicTasks() {
 
     useEffect(() => {
         setLoading(true)
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/public-tasks/taskID/?taskID=${taskID}`)
+        axios.get(`${process.env.API_LINK}/api/dashboard/public-tasks/taskID/?taskID=${taskID}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {
@@ -54,7 +54,7 @@ export default function PublicTasks() {
         }
 
         setAcceptLoading(true)
-        axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/accept-task`, acceptedTask)
+        axios.post(`${process.env.API_LINK}/api/dashboard/accept-task`, acceptedTask)
             .then(res => {
                 const { data } = res
                 alert(data.message)

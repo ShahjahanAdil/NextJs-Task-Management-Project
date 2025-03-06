@@ -29,7 +29,7 @@ export default function AssignTask() {
 
     const fetchUser = async () => {
         setLoading(true)
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/assign-task/${userID}`)
+        axios.get(`${process.env.API_LINK}/api/admin/assign-task/${userID}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {
@@ -81,7 +81,7 @@ export default function AssignTask() {
         }
 
         setAssignLoading(true)
-        await axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/admin/assign-task`, { privateTask, notification })
+        await axios.post(`${process.env.API_LINK}/api/admin/assign-task`, { privateTask, notification })
             .then(res => {
                 const { status, data } = res
                 if (status === 201) {

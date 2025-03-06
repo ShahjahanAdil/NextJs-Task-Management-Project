@@ -31,7 +31,7 @@ export default function Profile() {
 
 	const handleUpdateAccount = (userID) => {
 		setLoading(true)
-		axios.patch(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/profile/update-account?userID=${userID}`, profileUser)
+		axios.patch(`${process.env.API_LINK}/api/dashboard/profile/update-account?userID=${userID}`, profileUser)
 			.then(res => {
 				const { status } = res
 				if (status === 203) {
@@ -50,7 +50,7 @@ export default function Profile() {
 
 	const handleDeleteAccount = (userID) => {
 		setLoading(true)
-		axios.delete(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/profile/delete-account?userID=${userID}`)
+		axios.delete(`${process.env.API_LINK}/api/dashboard/profile/delete-account?userID=${userID}`)
 			.then(res => {
 				const { status } = res
 				if (status === 203) {

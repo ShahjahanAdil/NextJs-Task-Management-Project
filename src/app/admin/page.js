@@ -21,7 +21,7 @@ export default function Admin() {
 
 	const fetchTopUsers = () => {
 		setLoading(true)
-		axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/fetch-top-users`)
+		axios.get(`${process.env.API_LINK}/api/admin/fetch-top-users`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 200) {

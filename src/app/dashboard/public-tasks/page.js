@@ -21,7 +21,7 @@ export default function PublicTasks() {
 
     useEffect(() => {
         setLoading(true)
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/public-tasks?page=${page}`)
+        axios.get(`${process.env.API_LINK}/api/dashboard/public-tasks?page=${page}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {
@@ -45,7 +45,7 @@ export default function PublicTasks() {
 
         setLoading(true)
         setSearchTasks([])
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/public-tasks/search-tasks?searchTasks=${searchTasks}`)
+        axios.get(`${process.env.API_LINK}/api/dashboard/public-tasks/search-tasks?searchTasks=${searchTasks}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {

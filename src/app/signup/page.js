@@ -41,7 +41,7 @@ export default function SignUp() {
 		}
 
 		setLoading(true)
-		await axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/auth/signup`, newUserData)
+		await axios.post(`${process.env.API_LINK}/api/auth/signup`, newUserData)
 			.then(res => {
 				const { status, data } = res
 				if (status === 201) {

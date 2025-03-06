@@ -15,7 +15,7 @@ export default function FailedTasks() {
 
     const handleFetchData = () => {
         setLoading(true)
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/failed-tasks/?userID=${user?.userID}`)
+        axios.get(`${process.env.API_LINK}/api/dashboard/failed-tasks/?userID=${user?.userID}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {

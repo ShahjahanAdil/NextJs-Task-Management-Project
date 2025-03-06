@@ -16,7 +16,7 @@ export default function TasksAssigned() {
 
 	useEffect(() => {
 		setLoading(true)
-		axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/tasks-assigned`)
+		axios.get(`${process.env.API_LINK}/api/admin/tasks-assigned`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 200) {

@@ -17,7 +17,7 @@ export default function PendingTasks() {
 
     const handleFetchData = () => {
         setLoading(true)
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/pending-tasks/?userID=${user?.userID}`)
+        axios.get(`${process.env.API_LINK}/api/dashboard/pending-tasks/?userID=${user?.userID}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {

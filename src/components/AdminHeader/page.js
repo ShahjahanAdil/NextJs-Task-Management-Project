@@ -28,7 +28,7 @@ export default function AdminHeader() {
     }, [user])
 
     const fetchNotifications = () => {
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/notifications/header-notifications?userID=${user.userID}`)
+        axios.get(`${process.env.API_LINK}/api/admin/notifications/header-notifications?userID=${user.userID}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {
@@ -56,7 +56,7 @@ export default function AdminHeader() {
                 return notification
             })
 
-            axios.patch(`${process.env.NEXT_PUBLIC_HOST}/api/admin/notifications/mark-as-read`, { userID: user.userID })
+            axios.patch(`${process.env.API_LINK}/api/admin/notifications/mark-as-read`, { userID: user.userID })
                 .then(res => {
                     const { status } = res
                     if (status === 202) {

@@ -31,7 +31,7 @@ export default function AuthContextProvider({ children }) {
         if (!token) return
         const config = { headers: { Authorization: `Bearer ${token}` } }
 
-        await axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/auth/user`, config)
+        await axios.get(`${process.env.API_LINK}/api/auth/user`, config)
             .then((res) => {
                 const { status, data } = res
                 if (status === 200) {

@@ -25,7 +25,7 @@ export default function Notifications() {
 
     const fetchNotifications = (page) => {
         setLoading(true)
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/notifications?userID=${user?.userID}&page${page}`)
+        axios.get(`${process.env.API_LINK}/api/dashboard/notifications?userID=${user?.userID}&page${page}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {
@@ -43,7 +43,7 @@ export default function Notifications() {
 
     const handleClearNotifications = () => {
         setClearLoading(true)
-        axios.delete(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/notifications/clear-all?userID=${user?.userID}`)
+        axios.delete(`${process.env.API_LINK}/api/dashboard/notifications/clear-all?userID=${user?.userID}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 203) {

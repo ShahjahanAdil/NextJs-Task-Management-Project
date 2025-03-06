@@ -28,7 +28,7 @@ export default function Login() {
 		}
 
 		setLoading(true)
-		axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/auth/login`, { email, password })
+		axios.post(`${process.env.API_LINK}/api/auth/login`, { email, password })
 			.then(res => {
 				const { status, data } = res
 				if (status === 200) {

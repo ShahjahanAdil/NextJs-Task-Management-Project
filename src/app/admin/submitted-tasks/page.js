@@ -24,7 +24,7 @@ export default function SubmittedTasks() {
 
 	const fetchSubmittedTasks = (page) => {
 		setLoading(true)
-		axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/submitted-tasks?page=${page}`)
+		axios.get(`${process.env.API_LINK}/api/admin/submitted-tasks?page=${page}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 200) {

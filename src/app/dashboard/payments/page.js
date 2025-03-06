@@ -38,7 +38,7 @@ export default function Notifications() {
 
     const fetchUserAccount = () => {
         setLoading(true)
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/payments?userID=${user?.userID}`)
+        axios.get(`${process.env.API_LINK}/api/dashboard/payments?userID=${user?.userID}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {
@@ -55,7 +55,7 @@ export default function Notifications() {
 
     const fetchWithdraws = (page) => {
         setLoading(true)
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/payments/withdraws?userID=${user?.userID}&page${page}`)
+        axios.get(`${process.env.API_LINK}/api/dashboard/payments/withdraws?userID=${user?.userID}&page${page}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {
@@ -92,7 +92,7 @@ export default function Notifications() {
         }
 
         setWithdrawLoading(true)
-        axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/payments`, newWithdraw)
+        axios.post(`${process.env.API_LINK}/api/dashboard/payments`, newWithdraw)
             .then(res => {
                 const { status, data } = res
                 if (status === 201) {

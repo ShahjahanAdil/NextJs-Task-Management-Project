@@ -27,7 +27,7 @@ export default function TasksCreated() {
 	useEffect(() => {
 		if (user?.email) {
 			setLoading(true)
-			axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/tasks-created?page=${page}`)
+			axios.get(`${process.env.API_LINK}/api/admin/tasks-created?page=${page}`)
 				.then(res => {
 					const { status, data } = res
 					if (status === 200) {
@@ -52,7 +52,7 @@ export default function TasksCreated() {
 
 		setLoading(true)
 		setSearchedTasks([])
-		axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/tasks-created/search-tasks?searchTasks=${searchTasks}`)
+		axios.get(`${process.env.API_LINK}/api/admin/tasks-created/search-tasks?searchTasks=${searchTasks}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 200) {
@@ -80,7 +80,7 @@ export default function TasksCreated() {
 
 	const handleDeleteTask = () => {
 		setDelLoading(true)
-		axios.delete(`${process.env.NEXT_PUBLIC_HOST}/api/admin/tasks-created/delete?userID=${user.userID}&taskID=${delTaskID}`)
+		axios.delete(`${process.env.API_LINK}/api/admin/tasks-created/delete?userID=${user.userID}&taskID=${delTaskID}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 203) {

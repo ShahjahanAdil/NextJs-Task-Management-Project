@@ -39,7 +39,7 @@ export default function CreateTask() {
 		}
 
 		setLoading(true)
-		await axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/admin/create-task`, newTask)
+		await axios.post(`${process.env.API_LINK}/api/admin/create-task`, newTask)
 			.then(res => {
 				const { status, data } = res
 				if (status === 201) {

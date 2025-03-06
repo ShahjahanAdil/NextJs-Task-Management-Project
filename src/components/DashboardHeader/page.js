@@ -27,7 +27,7 @@ export default function DashboardHeader() {
     }, [user])
 
     const fetchNotifications = () => {
-        axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/notifications/header-notifications?userID=${user.userID}`)
+        axios.get(`${process.env.API_LINK}/api/dashboard/notifications/header-notifications?userID=${user.userID}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 200) {
@@ -55,7 +55,7 @@ export default function DashboardHeader() {
                 return notification
             })
 
-            axios.patch(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/notifications/mark-as-read`, { userID: user.userID })
+            axios.patch(`${process.env.API_LINK}/api/dashboard/notifications/mark-as-read`, { userID: user.userID })
                 .then(res => {
                     const { status } = res
                     if (status === 202) {

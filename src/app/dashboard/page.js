@@ -28,7 +28,7 @@ export default function Dashboard() {
 
 	const handleFetchData = () => {
 		setLoading(true)
-		axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/?userID=${user?.userID}`)
+		axios.get(`${process.env.API_LINK}/api/dashboard/?userID=${user?.userID}`)
 			.then(res => {
 				const { status, data } = res
 				const { userTCount, completedTCount, pendingTCount, failedTCount, publicTCount } = data

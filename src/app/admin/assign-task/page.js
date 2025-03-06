@@ -27,7 +27,7 @@ export default function AssignTask() {
 
 	const fetchUsers = (page) => {
 		setLoading(true)
-		axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/fetch-users?page=${page}`)
+		axios.get(`${process.env.API_LINK}/api/admin/fetch-users?page=${page}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 200) {
@@ -48,7 +48,7 @@ export default function AssignTask() {
 
 		setLoading(true)
 		setSearchedUser({})
-		axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/admin/fetch-users/${searchEmail}`)
+		axios.get(`${process.env.API_LINK}/api/admin/fetch-users/${searchEmail}`)
 			.then(res => {
 				const { status, data } = res
 				if (status === 200) {

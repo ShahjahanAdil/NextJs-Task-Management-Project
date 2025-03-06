@@ -41,9 +41,9 @@ export default function YourTasks() {
         setLoading(true)
         const url = filter === "all"
             ?
-            `${process.env.NEXT_PUBLIC_HOST}/api/dashboard/your-tasks?userID=${user?.userID}&page=${page}`
+            `${process.env.API_LINK}/api/dashboard/your-tasks?userID=${user?.userID}&page=${page}`
             :
-            `${process.env.NEXT_PUBLIC_HOST}/api/dashboard/your-tasks/filter?userID=${user?.userID}&page=${page}&filter=${filter}`
+            `${process.env.API_LINK}/api/dashboard/your-tasks/filter?userID=${user?.userID}&page=${page}&filter=${filter}`
         axios.get(url)
             .then(res => {
                 const { status, data } = res
@@ -72,7 +72,7 @@ export default function YourTasks() {
 
     const handleDeleteTask = () => {
         setDelLoading(true)
-        axios.delete(`${process.env.NEXT_PUBLIC_HOST}/api/dashboard/your-tasks/delete?userID=${user?.userID}&taskID=${delTaskID}`)
+        axios.delete(`${process.env.API_LINK}/api/dashboard/your-tasks/delete?userID=${user?.userID}&taskID=${delTaskID}`)
             .then(res => {
                 const { status, data } = res
                 if (status === 203) {
