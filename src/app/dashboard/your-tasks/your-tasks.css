@@ -1,0 +1,16 @@
+.my-task-box {
+    width: 32%;
+    min-height: 220px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: all 0.25s ease-out;
+}
+
+.my-task-box:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 20px;
+}
+
+.word-wrap {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}

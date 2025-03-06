@@ -1,0 +1,107 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.h-left h2 {
+    font-size: 30px;
+    color: #6c5ce7;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.h-left span {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.h-right nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.h-link {
+    font-size: 18px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.25s ease-out;
+}
+
+.h-link:hover {
+    color: #6c5ce7;
+}
+
+.auth-btn {
+    color: #fff;
+    background-color: #6c5ce7;
+    padding: 8px 22px;
+    border-radius: 50px;
+    transition: all 0.25s ease-out;
+}
+
+.auth-btn:hover {
+    color: #fff;
+    background-color: #0093E9;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+#login-btn {
+    color: #6c5ce7;
+    background-color: #fff;
+    border: 2px solid #6c5ce7;
+    transition: all 0.25s ease-out;
+}
+
+#login-btn:hover {
+    color: #fff;
+    background-color: #6c5ce7;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.bell-box {
+    transition: all 0.3s ease-out;
+}
+
+.bell-open {
+    visibility: visible;
+    opacity: 1;
+    scale: 1;
+}
+
+.bell-close {
+    visibility: hidden;
+    opacity: 0;
+    scale: 0.95;
+}
+
+.side-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 350px;
+    height: 100dvh;
+    background-color: #fff;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    transform: translateX(-100%);
+    transition: all 0.35s ease-out;
+    z-index: 1000;
+}
+
+.sidebar-open {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.sidebar-close {
+    opacity: 0.5;
+    transform: translateX(-100%);
+}
+
+.h-top span {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

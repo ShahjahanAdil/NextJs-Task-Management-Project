@@ -1,0 +1,13 @@
+.load-anim {
+    animation: loading 1s alternate infinite cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.35;
+    }
+}

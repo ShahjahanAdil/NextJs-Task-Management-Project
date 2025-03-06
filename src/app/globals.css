@@ -2,20 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+    font-family: cocomat;
+    src: url('../assets/fonts/Cocomat.ttf');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+    font-family: gilroy;
+    src: url('../assets/fonts/Gilroy.ttf');
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'gilroy', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    color: #333;
+}
+
+p {
+    color: #666;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+span {
+    font-weight: 500;
+}
+
+label {
+    color: #333;
+    font-weight: 600;
+    display: block;
+}
+
+input {
+    color: #666;
+    font-family: 'gilroy', sans-serif;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #9a8ef7;
+}
+
+button {
+    font-weight: 600;
+}
+
+.my-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.hero-section {
+    display: flex;
+    height: calc(100vh - 85px);
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.hero-left {
+    width: 40%;
+}
+
+.hero-right {
+    width: 30%;
+}
+
+.hero-img {
+    width: 100%;
+}
+
+.hero-btn {
+    border: 2px solid #6c5ce7;
+    padding: 8px 22px;
+    color: #6c5ce7;
+    margin-top: 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.25s ease-out;
+}
+
+.hero-btn:hover {
+    color: #fff;
+    background-color: #6c5ce7;
 }

@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.h-left h2 {
+    font-size: 30px;
+    color: #6c5ce7;
+    font-weight: bold;
+}
+
+.h-right nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.h-link {
+    font-size: 18px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.25s ease-out;
+}
+
+.h-link:hover {
+    color: #6c5ce7;
+}
+
+.auth-btn {
+    color: #fff;
+    background-color: #6c5ce7;
+    padding: 8px 22px;
+    border-radius: 50px;
+    transition: all 0.25s ease-out;
+}
+
+.auth-btn:hover {
+    color: #fff;
+    background-color: #0093E9;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+#login-btn {
+    color: #6c5ce7;
+    background-color: #fff;
+    border: 2px solid #6c5ce7;
+    transition: all 0.25s ease-out;
+}
+
+#login-btn:hover {
+    color: #fff;
+    background-color: #6c5ce7;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}

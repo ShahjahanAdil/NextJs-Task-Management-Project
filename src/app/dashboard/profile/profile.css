@@ -1,0 +1,27 @@
+.profile-container {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.profile-input input {
+    box-shadow: rgba(82, 82, 82, 0.1) 0px 1px 3px 0px, rgba(68, 68, 68, 0.06) 0px 1px 2px 0px;
+}
+
+.profile-input select {
+    box-shadow: rgba(82, 82, 82, 0.1) 0px 1px 3px 0px, rgba(68, 68, 68, 0.06) 0px 1px 2px 0px;
+}
+
+.update-btn {
+    transition: all 0.25s ease-out;
+}
+
+.update-btn:hover {
+    background-color: #5340e7;
+}
+
+.delete-btn {
+    transition: all 0.25s ease-out;
+}
+
+.delete-btn:hover {
+    background-color: #ef3333;
+}
